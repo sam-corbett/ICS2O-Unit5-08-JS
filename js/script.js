@@ -7,7 +7,7 @@
 "use strict"
 
 /**
- * Check servie worker.
+ * Check service worker.
  */
 if (navigator.serviceWorker) {
   navigator.serviceWorker.register("/ICS2O-Unit5-08-JS/sw.js", {
@@ -16,8 +16,19 @@ if (navigator.serviceWorker) {
 }
 
 /**
- * This function displays an alert.
+ * This function does division using a loop.
  */
+
 function myButtonClicked() {
-  document.getElementById("hello-world").innerHTML = "<p>Hello, World!</p>"
+  var numB = parseFloat(document.getElementById("number-b").value)
+  var numA = parseFloat(document.getElementById("number-a").value)
+  var counter = 0
+  var remainder = numA
+
+  while (remainder >= numB) {
+    remainder = remainder - numB
+    counter++
+  }
+  document.getElementById("quotient").innerHTML =
+    "You have a quotient of  " + counter + " R " + remainder + "."
 }
